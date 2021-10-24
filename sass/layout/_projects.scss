@@ -1,0 +1,31 @@
+.projects {
+    padding-top: 47px;
+}
+
+.projects__list {
+    display: flex;
+}
+
+.projects__img {
+    position: relative;
+}
+
+.projects__label {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+    background-color: rgba(47, 48, 58, 0.8);
+}
