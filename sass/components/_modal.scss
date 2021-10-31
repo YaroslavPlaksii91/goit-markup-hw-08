@@ -4,6 +4,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   @include transition-double(opacity, visibility);
@@ -13,24 +15,44 @@
     visibility: hidden;
     pointer-events: none;
   }
+
+  @media screen and (max-width: 767px) {
+    padding: 93px 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    // padding-top: 208px;
+    // padding-bottom: 207px;
+    padding: 0;
+  }
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 528px;
-  min-height: 581px;
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(-50%, -50%) scale(1);
-  @include transition(transform);
 
-  .backdrop.is-hidden & {
-    transform: translate(-50%, -50%) scale(1.2);
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    @include transition(transform);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
   }
 }
 
@@ -39,15 +61,13 @@
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   color: var(--title-text-color);
-}
 
-.modal-form {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
 .modal-form__label-text {
@@ -101,10 +121,15 @@
   resize: none;
 
   &::placeholder {
-    font-size: 12px;
-    line-height: 1.17;
+    font-size: 14px;
+    line-height: 1.14;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
+
+    @media screen and (min-width: 1200px) {
+      font-size: 12px;
+      line-height: 1.17;
+    }
   }
 }
 

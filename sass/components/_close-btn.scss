@@ -21,3 +21,34 @@
     fill: var(--accent-color);
   }
 }
+
+.mobile__btn {
+  // position: absolute;
+  // top: 10px;
+  // right: 15px;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.modile-close__icon {
+  fill: var(--title-text-color);
+  @include transition(fill);
+
+  .mobile-close__btn:hover & {
+    fill: var(--accent-color);
+  }
+}
+
+.mobile-menu .icon-cross {
+  display: none;
+}
+
+.mobile-menu.is-open .icon-cross {
+  display: block;
+}
+.mobile__btn {
+  fill: black;
+}
